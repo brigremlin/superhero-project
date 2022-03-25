@@ -1,0 +1,10 @@
+<div class ="detail container">
+    <h1 class = "text-center"> <%= @superhero.name %> </h1>
+    <%= image_tag @superhero.image %>
+    <div class = "row hero-details">
+            <span class = "dot"> <p id="power-stat"> Intelligence </p> <%= @superhero.intelligence %> </span>
+            <span class = "dot"> <p id="power-stat"> Power </p> <%= @superhero.power %> </span>
+              <span class = "dot"><p id="power-stat"> Speed </p> <%= @superhero.speed %> </span>
+                <span class = "dot"> <p id="power-stat"> Strength </p><%= @superhero.strength %> </span>
+        </div>
+</div>

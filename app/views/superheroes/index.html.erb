@@ -1,0 +1,15 @@
+<h1 class = "text-center heading"> Superhero Listings</h1>
+    <section class = "superhero container">
+        <div class = "row">
+            <div class = "col-md-3">
+                <% @superheroes.each do |superhero| %>
+                <div class = "card" style= "width: 20rem;">
+                    <%= image_tag superhero.image, class: "hero-img" %>
+                    <h3 class="text-center"> <%= superhero.name%> </h3>
+                    <h4><%= link_to "Show", superhero_path(superhero) %> </h4>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </section>
+<section>
