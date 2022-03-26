@@ -1,10 +1,52 @@
-<div class ="detail container">
-    <h1 class = "text-center"> <%= @superhero.name %> </h1>
-    <%= image_tag @superhero.image %>
-    <div class = "row hero-details">
-            <span class = "dot"> <p id="power-stat"> Intelligence </p> <%= @superhero.intelligence %> </span>
-            <span class = "dot"> <p id="power-stat"> Power </p> <%= @superhero.power %> </span>
-              <span class = "dot"><p id="power-stat"> Speed </p> <%= @superhero.speed %> </span>
-                <span class = "dot"> <p id="power-stat"> Strength </p><%= @superhero.strength %> </span>
+
+    <!-- Details Start -->
+    <div class="container-fluid pt-5">
+        <%= link_to "Go Back", :back, class: "btn border-inner py-3 px-5 me-5" %>
+        <div class="container">
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+                <h1 class="display-4 text-uppercase"> <%= @superhero.name %></h1>
+            </div>
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <%= image_tag @superhero.image %>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                        <h4 class="mb-4">Full Name: <%= @superhero.full_name %> </h4>
+                        <h4 class="mb-4">Place of Birth: <%= @superhero.place_of_birth %> </h4>
+                        <h4 class="mb-4">Gender: <%= @superhero.gender %> </h4>
+                        <h4 class="mb-4">Height: <%= @superhero.height %> </h4>
+                        <h4 class="mb-4">Weight: <%= @superhero.weight %> </h4>
+
+                     <div class="row g-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 120px; height: 120px; background-color: rgba(255, 0, 0, .9);">
+                            <%= @superhero.power %> 
+                            </div>
+                            <h4 class="text-uppercase">Power</h4>
+        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 120px; height: 120px; background-color: rgba(255, 0, 0, .9);">
+                            <%= @superhero.speed %>
+                            </div>
+                            <h4 class="text-uppercase">Speed</h4>
+                        </div>
+                             <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 120px; height: 120px; background-color: rgba(255, 0, 0, .9);">
+                            <%= @superhero.strength %>
+                            </div>
+                            <h4 class="text-uppercase">Strength</h4>
+                        </div>
+                             <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 120px; height: 120px; background-color: rgba(255, 0, 0, .9);">
+                            <%= @superhero.intelligence %>
+                            </div>
+                            <h4 class="text-uppercase">Intelligence</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-</div>
+    </div>
