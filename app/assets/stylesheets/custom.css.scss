@@ -24,6 +24,12 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
+
+.navbar-toggler-icon {
+    max-width: 40px;
+    max-height: 40px;
+}
+
 .header-bar-left {
     background: #141618;
 }
