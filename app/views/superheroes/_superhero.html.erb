@@ -1,0 +1,24 @@
+
+<div class="container-xxl py-5">
+    <div class="container px-lg-5">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-4" style="max-width: 600px;">
+            <h1 class="mb-3">Characters</h1>
+        </div>
+    <div class="row g-4">
+        <% @superheroes.each do |superhero| %>
+        <div class="col-lg-3 col-md-6">
+            <div class= "hero-card border-top border-5 border-primary rounded shadow overflow-hidden">
+                <div class="text-center p-4">
+                    <%= image_tag superhero.image, class: "img-fluid rounded-circle mb-4;" %>
+                    <h3 class="text-center"> <%= superhero.name%> </h3>
+                    <p class="text-center"><strong> <%= superhero.full_name%> </strong> </p>
+                </div>
+                <div class="d-flex justify-content-center bg-primary p-3">
+                    <%= link_to "READ MORE", superhero_path(superhero), class: "btn border-inner py-3 px-5 text-white" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+ </div>
+ </div>
