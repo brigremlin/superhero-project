@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update]
 
     def index
         @users = User.all
@@ -10,12 +9,13 @@ class UsersController < ApplicationController
       end
     
       def edit
+        @user = User.find(params[:id])
       end
     
       def update
         if @user.update(user_params)
           flash[:notice] = "Your account information was successfully updated"
-          redirect_to @user
+          redirect_to superheroes_path
         else
           render 'edit'
         end
