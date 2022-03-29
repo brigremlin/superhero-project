@@ -1,31 +1,36 @@
-
-<section class="h-100 h-custom" style="background-color: #ffffff;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-8 col-xl-6">
-        <div class="card rounded-3">
-         <%= image_tag 'image.jpg' , class: style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" %>
-          <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
-
-            <form class="px-md-2">
-
-              <div class="form-outline mb-4">
-                <input type="text" id="form3Example1q" class="form-control" />
-                <label class="form-label" for="form3Example1q">Name</label>
-              </div>
-
-              <div class="row">
-               
-              </div>
-
-              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
-
-            </form>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'shared/errors', obj: @user %>
+      <%= form_with(model: @user, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label :username, class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Enter a username" %>
           </div>
         </div>
-      </div>
+
+        <div class="form-group row">
+          <%= f.label :email, class: "col-2 col-form-label text-light" %>
+          <div class="col-10"> 
+            <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your email address" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password, class: "col-2 col-form-label text-light" %>
+          <div class="col-10"> 
+            <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Choose a password" %>
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit "Sign up", class: "btn btn-outline-light btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="mb-3">
+
     </div>
   </div>
-</section>
+</div>
