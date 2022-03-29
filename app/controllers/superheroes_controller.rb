@@ -1,30 +1,34 @@
 class SuperheroesController < ApplicationController
-    before_action :set_superhero, only: [:show]
+    before_action :set_superhero, only: [:show, :edit, :update, :destroy]
+
+    def show
+    end
 
     def index
         @superheroes = Superhero.all
     end
 
     def new 
-        @superheroes = Superhero.new
+        @superhero = Superhero.new
     end
 
     def edit
+
     end
 
     def create
         @superhero = Superhero.new(superhero_params)
-        @superhero.user = user.first
+        @superhero.user = User.first
         if @superhero.save
             flash[:notice] = "Superhero was created successfully"
-            redirect_to @superhero
+            redirect_to superheroes_path
         else
             render 'new'
         end
     end
 
     def update
-        if @superhero.update(article_params)
+        if @superhero.update(superhero_params)
             flash[:notice] = "Superhero was updated successfully"
             redirect_to @superhero
         else
@@ -37,8 +41,6 @@ class SuperheroesController < ApplicationController
         redirect_to supheroes_path
     end
 
-    def show
-    end
 
     private
     def set_superhero
@@ -46,6 +48,6 @@ class SuperheroesController < ApplicationController
     end
 
     def superhero_params
-        params.require(:superhero).permit(:name)
+        params.require(:superhero).permit(:name, :full_name, :place_of_birth, :image, :gender, :height, :weight, :intelligence, :strength, :speed, :power)
     end
 end
