@@ -6,7 +6,6 @@ class SuperheroesController < ApplicationController
 
     def index
         @superheroes = Superhero.paginate(page: params[:page], per_page: 12)
-
     end
 
     def new 
@@ -19,7 +18,7 @@ class SuperheroesController < ApplicationController
 
     def create
         @superhero = Superhero.new(superhero_params)
-        @superhero.user = User.first
+        @superhero.user = current_user
         if @superhero.save
             flash[:notice] = "Superhero was created successfully"
             redirect_to superheroes_path

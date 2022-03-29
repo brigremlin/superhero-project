@@ -10,6 +10,10 @@
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <%= image_tag @superhero.image, class: "img-fluid" %>
+                           <% if logged_in? && @superhero.user == current_user %>
+                                <%= link_to "Edit", edit_superhero_path(@superhero), class: "btn btn-primary" %>
+                                <%= link_to "Delete", superhero_path(@superhero), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+                            <% end %>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -44,10 +48,10 @@
                             <%= @superhero.intelligence %>
                             </div>
                             <h4 class="text-uppercase">Intelligence</h4>
-
                         </div>
                     </div>
                        <%= link_to "Edit", edit_superhero_path(@superhero), class: "btn btn-primary" %>
+                       <p> Created by <%= @superhero.user.username if @superhero.user %> </p>
                 </div>
             </div>
         </div>
