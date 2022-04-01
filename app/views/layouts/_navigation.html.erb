@@ -49,6 +49,9 @@
                   <%= link_to "Log in", "/login", class: "nav-item nav-link active" %>
                    <%= link_to "Sign Up", "/signup", class: "nav-item nav-link active" %>
                     <% end %>
+                    <% if logged_in? %>
+                    <a class = "nav-link username-display"> <%= current_user.username %></a>
+                    <% end %>
         </div>
     </nav>
     <!-- Navbar End -->

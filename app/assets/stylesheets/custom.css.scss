@@ -30,12 +30,21 @@ $black:    #000;
     max-height: 40px;
 }
 
+.username-display {
+    color: rgb(98, 185, 255) !important;
+}
+
 .header-bar-left {
     background: #141618;
 }
 
 .header-bar-right {
     background: #141618;
+}
+
+.changes-button {
+    margin-top: 1rem;
+    margin-right: .5rem;
 }
 
 span {

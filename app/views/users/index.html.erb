@@ -14,7 +14,7 @@
             </h5>
             <p class="card-text"><%= pluralize(user.superheroes.count, "superhero") %></p>
             <%= link_to "View profile", user, class: "btn btn-primary" %>
-            <% if logged_in? and user == current_user %>
+            <% if logged_in? && (user == current_user || current_user.admin? ) %>
               <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-primary" %>
             <% end %>
           </div>

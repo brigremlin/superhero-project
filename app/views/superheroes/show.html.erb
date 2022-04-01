@@ -11,8 +11,8 @@
                     <div class="position-relative h-100">
                         <%= image_tag @superhero.image, class: "img-fluid" %>
                            <% if logged_in? && @superhero.user == current_user %>
-                                <%= link_to "Edit", edit_superhero_path(@superhero), class: "btn btn-primary" %>
-                                <%= link_to "Delete", superhero_path(@superhero), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+                                <%= link_to "Edit", edit_superhero_path(@superhero), class: "btn btn-primary changes-button" %>
+                                <%= link_to "Delete", superhero_path(@superhero), class: "btn btn-primary changes-button ", method: :delete, data: {confirm: "Are you sure?"} %>
                             <% end %>
                     </div>
                 </div>
@@ -22,6 +22,8 @@
                         <h4 class="mb-4">Gender: <%= @superhero.gender %> </h4>
                         <h4 class="mb-4">Height: <%= @superhero.height %> </h4>
                         <h4 class="mb-4">Weight: <%= @superhero.weight %> </h4>
+                        <h4 class="mb-4">Universe: <%= @superhero.universe %> </h4>
+
 
                      <div class="row g-5">
                         <div class="col-sm-6">
@@ -50,7 +52,6 @@
                             <h4 class="text-uppercase">Intelligence</h4>
                         </div>
                     </div>
-                       <%= link_to "Edit", edit_superhero_path(@superhero), class: "btn btn-primary" %>
                        <p> Created by <%= @superhero.user.username if @superhero.user %> </p>
                 </div>
             </div>
