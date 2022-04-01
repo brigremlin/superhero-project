@@ -14,5 +14,6 @@ class Superhero < ApplicationRecord
     validates :strength, presence: true, length: { minimum: 1, maximum: 3 }
     validates :speed, presence: true, length: { minimum: 1, maximum: 3 }
     validates :power, presence: true, length: { minimum: 1, maximum: 3 }
+    validates :universe, uniqueness: { case_sensitive: false }
     
 end
