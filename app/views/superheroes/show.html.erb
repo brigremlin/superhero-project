@@ -1,13 +1,9 @@
 
-    <!-- Details Start -->
     <div class="container-fluid pt-5">
         <%= link_to "Go Back", :back, class: "btn border-inner py-3 px-5 me-5" %>
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h1 class="display-4 text-uppercase"> <%= @superhero.name %></h1>
-                <%# <% if @superhero.categories.any? %>
-                <%# <div class ="mt-2"> <% render @superhero.categories %>
-                <%# <% end %> 
             </div>
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
@@ -26,7 +22,6 @@
                         <h4 class="mb-4">Height: <%= @superhero.height %> </h4>
                         <h4 class="mb-4">Weight: <%= @superhero.weight %> </h4>
                         <h4 class="mb-4">Universe: <%= @superhero.universe %> </h4>
-
 
                      <div class="row g-5">
                         <div class="col-sm-6">

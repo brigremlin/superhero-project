@@ -9,7 +9,8 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
               <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">The Stack Awaits</p>
-              <p class = "text-center fw-bold"> Need to join the stack? Sign up here </p>
+              <p class = "text-center fw-bold"> Need to join the stack? 
+              <%= link_to 'Sign Up Here', 'signup' %>
               <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 rounded", local: true) do |f| %>
 
                   <div class="d-flex flex-row align-items-center mb-4">
