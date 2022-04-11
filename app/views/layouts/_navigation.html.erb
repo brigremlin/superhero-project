@@ -40,8 +40,17 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
                   <%= link_to "Home", "/", class: "nav-item nav-link active" %>
-                  <%= link_to "DC Universe", "/dc", class: "nav-item nav-link active" %>
-                  <%= link_to "Marvel Universe", "/", class: "nav-item nav-link active" %>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Superheroes
+                </a>
+                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">DC Universe</a></li>
+                <li><a class="dropdown-item" href="#">Marvel Universe</a></li>
+                 <li><a class="dropdown-item" href="#">Categories</a></li>
+                </ul>
+                </li>
+
                   <% if logged_in? %>
                     <%= link_to "Create", "/superheroes/new", class: "nav-item nav-link active" %>
                     <%= link_to "Logout", "/logout", class: "nav-item nav-link active", method: :delete %>
