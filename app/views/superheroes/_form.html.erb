@@ -110,7 +110,11 @@
                 </form>
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+              <% if @superhero_path %>
                 <%= image_tag @superhero.image, class: "img-fluid rounded-circle mb-4 shadow" %> 
+                <% else %>
+                       <%= image_tag 'ironman.png', class: "img-fluid rounded-circle mb-4 shadow" %> 
+                <% end %>
               </div>
             </div>
           </div>
