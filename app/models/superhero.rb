@@ -2,6 +2,8 @@ class Superhero < ApplicationRecord
     belongs_to :user
     has_many :superhero_categories
     has_many :categories, through: :superhero_categories
+    has_many :superhero_universes
+    has_many :superheroes, through: :superhero_universes
     validates :name, presence: true,
                 uniqueness: { case_sensitive: false }, 
                 length: { minimum: 3, maximum: 30 }

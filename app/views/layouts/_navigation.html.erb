@@ -45,8 +45,9 @@
                 Superheroes
                 </a>
                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">DC Universe</a></li>
-                <li><a class="dropdown-item" href="#">Marvel Universe</a></li>
+                 <li><%= link_to "Marvel", universes_path(@universe), class: "dropdown-item"%> </li>
+                <li><a class="dropdown-item" href="/dc">DC Universe</a></li>
+                <li><a class="dropdown-item" href="marvel">Marvel Universe</a></li>
                  <li><a class="dropdown-item" href="/categories">Categories</a></li>
                 </ul>
                 </li>

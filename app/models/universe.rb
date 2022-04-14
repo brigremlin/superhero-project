@@ -1,3 +1,3 @@
 class Universe < ApplicationRecord
-    belongs_to :superhero
+    has_many :superheroes
 end
