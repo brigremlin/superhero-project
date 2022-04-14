@@ -54,10 +54,12 @@
                   <% if logged_in? %>
                     <%= link_to "Create", "/superheroes/new", class: "nav-item nav-link active" %>
                     <%= link_to "Logout", "/logout", class: "nav-item nav-link active", method: :delete %>
+                     <%= link_to current_user.username, user_path(current_user), class: "nav-item nav-link active username-display"%>
                 <% else %>
                   <%= link_to "Log in", "/login", class: "nav-item nav-link active" %>
                    <%= link_to "Sign Up", "/signup", class: "nav-item nav-link active" %>
                     <% end %>
+                   
            
         </div>
     </nav>
