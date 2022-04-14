@@ -1,3 +1,3 @@
-class Superhero < ApplicationRecord
+class Universe < ApplicationRecord
     belongs_to :superhero
 end
