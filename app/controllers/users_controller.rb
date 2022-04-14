@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @user.destroy
       session[:user_id] = nil
       flash[:notice] = "Account and all associated articles successfully deleted"
-      redirect_to articles_path
+      redirect_to superheroes_path
     end
 
     def index

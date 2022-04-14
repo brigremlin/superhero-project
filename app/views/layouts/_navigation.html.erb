@@ -59,7 +59,7 @@
                    <%= link_to "Sign Up", "/signup", class: "nav-item nav-link active" %>
                     <% end %>
                     <% if logged_in? %>
-                    <a class = "nav-link username-display"> <%= current_user.username %></a>
+                    <%=link_to current_user.username, user_path(current_user), class: "nav-item nav-link active username-display" %>
                     <% end %>
         </div>
     </nav>
