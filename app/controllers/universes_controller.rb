@@ -1,3 +1,3 @@
-class Universes < ApplicationController
+class UniversesController < ApplicationController
 
 end
