@@ -1,0 +1,3 @@
+class Universes < ApplicationController
+
+end
