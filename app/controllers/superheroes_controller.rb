@@ -33,6 +33,7 @@ class SuperheroesController < ApplicationController
             flash[:notice] = "Superhero was updated successfully"
             redirect_to @superhero
         else
+            flash[:notice] = "Something went wrong"
             render 'edit'
         end
     end
@@ -49,6 +50,6 @@ class SuperheroesController < ApplicationController
     end
 
     def superhero_params
-        params.require(:superhero).permit(:name, :full_name, :place_of_birth, :image, :gender, :height, :weight, :intelligence, :strength, :speed, :power, category_ids:[])
+        params.require(:superhero).permit(:name, :full_name, :place_of_birth, :image, :gender, :height, :weight, :intelligence, :strength, :speed, :power,:universe, category_ids:[])
     end
 end
