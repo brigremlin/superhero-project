@@ -1,6 +1,6 @@
 
     <div class="container-fluid pt-5">
-        <%= link_to "Go Back", :back, class: "btn border-inner py-3 px-5 me-5" %>
+        <%= link_to "Go Back", superheroes_path, class: "btn border-inner py-3 px-5 me-5" %>
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h1 class="display-4 text-uppercase"> <%= @superhero.name %></h1>
@@ -9,6 +9,13 @@
                         <h4 class="text-center"><strong> <%= category.name %> </strong> </h4>
                         <% end %>
                     <% end %>
+                         <% if @superhero.universes.any? %>
+                        <% @superhero.universes.each do |universe| %>
+                        <h4 class="text-center"><strong> <%= universe.name %> </strong> </h4>
+                        <% end %>
+                    <% end %>
+            
+                  
             </div>
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">

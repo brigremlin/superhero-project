@@ -1,36 +1,23 @@
 class UniversesController < ApplicationController
-    before_action :require_admin, except: [:index, :show]
+    before_action :set_universe, only: [:show, :edit, :update, :destroy]
 
     def new
         @universe = Universe.new
     end
-
-    def create
-        @universe = Universe.new(universe_params)
-        if @universe.save 
-            flash[:notice] = "Universe was successfully created"
-            redirect_to @universe
-        else
-            render 'new'
-        end
-    end
   
     def index
-        @Universes = Universe.paginate(page: params[:page], per_page: 5)
+        @universes = Universe.paginate(page: params[:page], per_page: 5)
     end
   
     def show
         @universe = Universe.find(params[:id])
     end
 
-    def require_admin
-        if !(logged_in? && current_user.admin?)
-          flash[:alert] = "Only admins can perform that action"
-          redirect_to universes_path
-        end
-      end
 
-    private 
+    private
+    def set_universe
+        @universe = Universe.find(params[:id])
+    end
 
     def universe_params
         params.require(:universe).permit(:name)

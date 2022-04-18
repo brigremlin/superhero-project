@@ -3,13 +3,12 @@ class Superhero < ApplicationRecord
     has_many :superhero_categories
     has_many :categories, through: :superhero_categories
     has_many :superhero_universes
-    has_many :superheroes, through: :superhero_universes
+    has_many :universes, through: :superhero_universes
     validates :name, presence: true,
                 uniqueness: { case_sensitive: false }, 
                 length: { minimum: 3, maximum: 30 }
-    validates :full_name, presence: true,
-                uniqueness: { case_sensitive: false }, 
-                length: { minimum: 3, maximum: 30 }
+    validates :full_name,
+                uniqueness: { case_sensitive: false }
     validates :place_of_birth, presence: true
     validates :gender, presence: true, length: { minimum: 1, maximum: 6 }
     validates :height, presence: true, length: { minimum: 1, maximum: 5 }

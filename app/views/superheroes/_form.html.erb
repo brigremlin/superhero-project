@@ -57,14 +57,6 @@
                       <label class="form-label" for="form3Example1c">Weight</label>
                     </div>
                   </div>
-                              <%# Universe %>
-                         <%# <div class="d-flex flex-row align-items-center mb-4">
-                    <div class="form-outline flex-fill mb-0">
-                   <%= f.text_field :universe, { class: "form-control" } %>
-                      <%# <label class="form-label" for="form3Example1c">Universe</label>
-                    </div>
-                  </div>  %>
-
                                <%# Intelligence %>
                          <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
@@ -94,15 +86,22 @@
                     </div>
                   </div>
 
+                           <%# Universes %>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <label class="form-label" for="form3Example1c"> <strong>Universe: </strong></label>
+                      <%= f.label :universe, class: "col-2-form-label text-light"%>
+                      <div class="form-outline flex-fill mb-0">
+                      <%= f.collection_select(:universe_ids, Universe.all, :id, :name, class:"custom-select shadow rounded") %>
+                    </div>
+                  </div>
 
+        
                     <%# Categories %>
                     <div class="d-flex flex-row align-items-center mb-4">
-                          <label class="form-label" for="form3Example1c"> <strong>Category: </strong></label>
+                        <label class="form-label" for="form3Example1c"> <strong>Category: </strong></label>
                       <%= f.label :category, class: "col-2-form-label text-light"%>
                       <div class="form-outline flex-fill mb-0">
                       <%= f.collection_select(:category_ids, Category.all, :id, :name, {prompt: "Select category/categories from below:", class: "text-uppercase"}, { multiple: true, size: 3, class:"custom-select shadow rounded"}) %>
-
-                        
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
@@ -125,4 +124,3 @@
     <% end %>
   </div>
 </section>
-
