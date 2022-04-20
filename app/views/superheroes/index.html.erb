@@ -1,7 +1,5 @@
 
-<div class="digg_pagination">
-    <div class="page_info">
-      <%= render 'superhero' %>
-    </div>
-    <%= will_paginate @superheroes, :container => false %>
+<%= render 'superhero' %>
+<div class="apple_pagination">
+    <%= will_paginate @superheroes, :container => false, :previous_label => '', :next_label => '' %>
   </div>
