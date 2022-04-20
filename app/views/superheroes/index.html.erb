@@ -1,5 +1,7 @@
 
-<%= render 'superhero' %>
-<div class="flickr_pagination margin-bottom">
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= render 'superhero' %>
+    </div>
     <%= will_paginate @superheroes, :container => false %>
   </div>
