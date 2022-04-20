@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   resources :categories, except: [:destroy]
   resources :users
   resources :universes
-
 end

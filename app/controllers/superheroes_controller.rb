@@ -1,6 +1,7 @@
 class SuperheroesController < ApplicationController
     before_action :set_superhero, only: [:show, :edit, :update, :destroy]
 
+
     def show
     end
 

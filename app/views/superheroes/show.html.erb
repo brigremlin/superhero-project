@@ -34,35 +34,24 @@
                         <h4 class="mb-4">Height: <%= @superhero.height %> </h4>
                         <h4 class="mb-4">Weight: <%= @superhero.weight %> </h4>
                    
-
-                     <div class="row g-5">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 8rem; height: 8rem; background-color: rgba(255, 0, 0, .9);">
-                            <%= @superhero.power %> 
-                            </div>
-                            <h4 class="text-uppercase">Power</h4>
-        
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: <%= @superhero.power %>%;"></div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 8rem; height: 8rem; background-color: rgba(255, 0, 0, .9);">
-                            <%= @superhero.speed %>
-                            </div>
-                            <h4 class="text-uppercase">Speed</h4>
+                        <h3>Power</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: <%= @superhero.speed %>%;"></div>
                         </div>
-                             <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 8rem; height: 8rem; background-color: rgba(255, 0, 0, .9);">
-                            <%= @superhero.strength %>
-                            </div>
-                            <h4 class="text-uppercase">Strength</h4>
+                        <h3>Speed</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: <%= @superhero.strength %>%;"></div>
                         </div>
-                             <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center border-inner mb-4" id="power-stat" style="width: 8rem; height: 8rem; background-color: rgba(255, 0, 0, .9);">
-                            <%= @superhero.intelligence %>
-                            </div>
-                            <h4 class="text-uppercase">Intelligence</h4>
+                        <h3>Strength</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: <%= @superhero.intelligence %>%;"></div>
                         </div>
+                        <h3>Intelligence</h3>
                     </div>
-                       <p> Created by <%= @superhero.user.username if @superhero.user %> </p>
+            
                 </div>
             </div>
         </div>

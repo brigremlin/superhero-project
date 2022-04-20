@@ -203,6 +203,10 @@ h6,
     border-radius: 8px;
 }
 
+.img-fluid:hover {
+    filter: grayscale(100%)
+}
+
 
 .hero-card,
 .hero-card .bg-primary,
@@ -220,6 +224,41 @@ h6,
 
 .hero-card:hover .bg-primary i {
     color: $red !important;
+}
+
+.back-to-top {
+    content: "*";
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 99;
+}
+
+.bg-img {
+    background-size: cover;
+    background: linear-gradient($primary, $secondary);
+}
+
+.border-inner {
+    position: relative;
+}
+
+.border-inner * {
+    position: relative;
+    z-index: 1;
+}
+
+.border-inner::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: 1px solid var(--light);
+    z-index: 0;
 }
 
 .apple_pagination {
@@ -254,3 +293,11 @@ h6,
       color: rgb(0, 0, 0); }
       .apple_pagination a:hover, .apple_pagination a:focus {
         text-decoration: underline; }
+
+.footer-image {
+    // background-size: cover;
+    // background-color: $secondary;
+    background: asset-url('banner.png');
+    min-height: 200px;
+    margin-top: 100px;
+}
